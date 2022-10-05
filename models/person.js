@@ -20,12 +20,14 @@ const PersonSchema = new mongoose.Schema({
     required: true,
   },
   number: {
-    type: Number,
+    type: String,
     required: true,
     validate: {
       validator: function (val) {
         const check1 = val.length > 8
         const a = val.split('-')
+        console.log(a[0])
+        console.log(a[1])
         if (a.length === 1) {
           return check1
         } else if (a.length === 2) {
